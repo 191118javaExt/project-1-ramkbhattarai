@@ -5,9 +5,12 @@ import java.util.List;
 
 import com.revature.dao.DaoForAll;
 import com.revature.dao.TypeDaoImpl;
+
 import com.revature.models.Type;
 
+
 public class TypeService {
+
 	static DaoForAll<Type, Integer> ts = new TypeDaoImpl();
 	static List<Type> types = new ArrayList<>();
 	
@@ -31,5 +34,4 @@ public class TypeService {
 	public boolean update(Type t) {
 		return ts.update(t);
 	}
-
 }

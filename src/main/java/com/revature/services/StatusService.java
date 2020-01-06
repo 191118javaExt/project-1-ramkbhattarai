@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.dao.DaoForAll;
+
 import com.revature.dao.StatusDaoImpl;
+
 import com.revature.models.Status;
 
 public class StatusService {
+
+	
 
 	static DaoForAll<Status, Integer> ss = new StatusDaoImpl();
 	static List<Status> statuses = new ArrayList<>();
@@ -32,5 +36,5 @@ public class StatusService {
 	public boolean update(Status s) {
 		return ss.update(s);
 	}
-
+	
 }

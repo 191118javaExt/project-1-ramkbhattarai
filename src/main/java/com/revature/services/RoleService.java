@@ -5,10 +5,13 @@ import java.util.List;
 
 import com.revature.dao.DaoForAll;
 import com.revature.dao.RoleDaoImpl;
+
 import com.revature.models.Role;
+
 
 public class RoleService {
 
+	
 	static DaoForAll<Role, Integer> rs = new RoleDaoImpl();
 	static List<Role> roles = new ArrayList<>();
 	
