@@ -17,12 +17,12 @@ public class UserDaoImpl implements DaoForAll<User, Integer>{
 
 	private static Logger log = Logger.getLogger(UserDaoImpl.class);
 	@Override
-	public List<User> getAll() {
+	public List<User> getAllUsers() {
 		List<User> userList = new ArrayList<>();
 		
 		try (Connection con = ConnectionUtil.getConnection()) {
 				
-			String sql = "SELECT * FROM project1.users;";
+			String sql = "SELECT * FROM project1.users where role_id = 1;";
 			
 			Statement stmt = con.createStatement();
 			
@@ -85,17 +85,18 @@ public class UserDaoImpl implements DaoForAll<User, Integer>{
 
 	@Override
 	public User add(User u) {
+		System.out.println("user in dto = " + u);
 		try (Connection conn = ConnectionUtil.getConnection()) {
 			
 			
-			String sql = "INSERT INTO project1.users (fname, lname, user_name, email, password,role_id) " +
+			String sql = "INSERT INTO project1.users (fname, lname, user_name, email, password, role_id) " +
 					"VALUES (?, ?, ?, ?, ?, ?);";
 			
 			PreparedStatement stm = conn.prepareStatement(sql);
 			stm.setString(1, u.getFname());
 			stm.setString(2, u.getLname());
-			stm.setString(3, u.getLname());
-			stm.setString(4, u.getLname());
+			stm.setString(3, u.getUserName());
+			stm.setString(4, u.getEmail());
 			stm.setString(5, u.getPassword());
 			stm.setInt(6, u.getRole_id());
 			
@@ -165,6 +166,46 @@ public class UserDaoImpl implements DaoForAll<User, Integer>{
 		return false;
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<User> getAllReimsByUserId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> getAll() {
+List<User> userList = new ArrayList<>();
+		
+		try (Connection con = ConnectionUtil.getConnection()) {
+				
+			String sql = "SELECT * FROM project1.users;";
+			
+			Statement stmt = con.createStatement();
+			
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				int id = rs.getInt("id");
+				String fname = rs.getString("fname");
+				String lname = rs.getString("lname");
+				String email = rs.getString("email");
+				String username = rs.getString("user_name");
+				String password = rs.getString("password");
+				int roleid = rs.getInt("role_id");
+				User u = new User(id, fname, lname,username, email, password, roleid);
+				
+				userList.add(u);
+			}
+			
+			rs.close();
+		} catch(SQLException e) {
+			log.warn("Unable to retrieve all users", e);
+		}
+
+		
+		return userList;
 	}
 	
 

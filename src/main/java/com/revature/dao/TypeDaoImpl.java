@@ -136,4 +136,16 @@ public class TypeDaoImpl implements DaoForAll<Type, Integer>{
 		return false;
 	}
 
+	@Override
+	public List<Type> getAllReimsByUserId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Type> getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
