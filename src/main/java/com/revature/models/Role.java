@@ -59,4 +59,7 @@ public class Role {
 		return "Role [id=" + id + ", userRole=" + userRole + "]";
 	}
 
+	
+	
+	
 }

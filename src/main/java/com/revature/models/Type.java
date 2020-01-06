@@ -1,6 +1,7 @@
 package com.revature.models;
 
 public class Type {
+
 	private int id;
 	private String reimbursementType;
 	
@@ -63,5 +64,7 @@ public class Type {
 		return "Type [id=" + id + ", reimbursementType=" + reimbursementType + "]";
 	}
 
-
+	
+	
+	
 }

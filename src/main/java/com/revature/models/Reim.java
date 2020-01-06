@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 
 public class Reim {
-
 	private int id;
 	private double amount;
 	private String description;
@@ -30,6 +29,37 @@ public class Reim {
 		this.status_id = status_id;
 		this.type_id = type_id;
 	}
+	
+	
+
+	public Reim(int id, double amount, String description, int author_id, int resolver_id, byte[] receipt,
+			int status_id, int type_id) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.description = description;
+		this.author_id = author_id;
+		this.resolver_id = resolver_id;
+		this.receipt = receipt;
+		this.status_id = status_id;
+		this.type_id = type_id;
+	}
+
+	
+
+
+	public Reim(int id, double amount, String description, int author_id, int resolver_id, int status_id, int type_id) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.description = description;
+		this.author_id = author_id;
+		this.resolver_id = resolver_id;
+		this.status_id = status_id;
+		this.type_id = type_id;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -178,4 +208,7 @@ public class Reim {
 				+ submitted + ", resolved=" + resolved + ", status_id=" + status_id + ", type_id=" + type_id + "]";
 	}
 	
+	
+	
+
 }
