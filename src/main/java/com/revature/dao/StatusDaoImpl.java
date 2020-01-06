@@ -136,4 +136,16 @@ public class StatusDaoImpl implements DaoForAll<Status, Integer>{
 		return false;
 	}
 
+	@Override
+	public List<Status> getAllReimsByUserId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Status> getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

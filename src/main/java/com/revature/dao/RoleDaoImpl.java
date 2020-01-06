@@ -136,4 +136,16 @@ public class RoleDaoImpl implements DaoForAll<Role, Integer>{
 		return false;
 	}
 
+	@Override
+	public List<Role> getAllReimsByUserId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Role> getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
