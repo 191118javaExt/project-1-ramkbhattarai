@@ -9,4 +9,96 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+    <servlet>
+  <servlet-name>HelloWorld</servlet-name>
+  <servlet-class>com.revature.servlets.HelloWorld</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelloWorld</servlet-name>
+  	<url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>RegisterServlet</servlet-name>
+  <servlet-class>com.revature.servlets.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>RegisterServlet</servlet-name>
+  	<url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>LoginServlet</servlet-name>
+  <servlet-class>com.revature.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>WelcomeServlet</servlet-name>
+  <servlet-class>com.revature.servlets.WelcomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>WelcomeServlet</servlet-name>
+  	<url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>ApplyServlet</servlet-name>
+  <servlet-class>com.revature.servlets.ApplyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ApplyServlet</servlet-name>
+  	<url-pattern>/apply</url-pattern>
+  </servlet-mapping>  
+  
+  <servlet>
+  <servlet-name>GetAllUsersServlet</servlet-name>
+  <servlet-class>com.revature.servlets.GetAllUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>GetAllUsersServlet</servlet-name>
+  	<url-pattern>/users</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>GetAllReimbursementsOfUser</servlet-name>
+  <servlet-class>com.revature.servlets.GetAllReimbursementsOfUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>GetAllReimbursementsOfUser</servlet-name>
+  	<url-pattern>/reims</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  <servlet-name>GetReimByIdServlet</servlet-name>
+  <servlet-class>com.revature.servlets.GetReimByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>GetReimByIdServlet</servlet-name>
+  	<url-pattern>/reimById</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  <servlet-name>UpdateReimServlet</servlet-name>
+  <servlet-class>com.revature.servlets.UpdateReimServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateReimServlet</servlet-name>
+  	<url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  
+  
+  <filter>
+    <filter-name>CORS</filter-name>
+    <filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>CORS</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
 </web-app>
